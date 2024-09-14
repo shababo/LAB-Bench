@@ -17,14 +17,17 @@ dependencies = [
   "anthropic",
   "chem-bench",
   "datasets",
-  "google-auth>=2.31", # Pin for py.typed
+  "google-auth>=2.31",
+  # Pin for py.typed
   "openai~=1.0",
   "pydantic~=2.0",
   "python-dotenv",
   "Pillow",
   "tenacity",
   "tqdm",
-  "vertexai"
+  "vertexai",
+  "labbench",
+  "ipython>=8.27.0",
 ]
 requires-python = ">=3.10"
 
@@ -41,3 +44,6 @@ repository = "https://github.com/Future-House/LAB-Bench"
 [tool.setuptools.packages.find]
 include = ["labbench*"]
 where = [".."]
+
+[tool.uv.sources]
+labbench = { workspace = true }

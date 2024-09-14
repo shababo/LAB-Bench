@@ -12,10 +12,10 @@ import labbench
 async def main():
     parser = ArgumentParser()
     parser.add_argument("--eval", type=labbench.Eval, required=True)
-    parser.add_argument("--provider", required=True)
-    parser.add_argument("--model", required=True)
+    parser.add_argument("--provider", type=str, default="anthropic")
+    parser.add_argument("--model", type=str, default="claude-3-5-sonnet-20240620")
 
-    parser.add_argument("--n_threads", type=int, default=1)
+    parser.add_argument("--n_threads", type=int, default=12)
     parser.add_argument("--output", type=str, default=None)
     parser.add_argument("--debug", action="store_true")
     parser.add_argument("--skip_completed", action="store_true")
@@ -50,10 +50,10 @@ async def main():
 
 
 NAME_TO_AGENT: Final[dict[str, type[labbench.BaseZeroShotAgent]]] = {
-    "openai": labbench.OpenAIZeroShotAgent,
-    "anthropic": labbench.AnthropicZeroShotAgent,
-    "vertex": labbench.VertexZeroShotAgent,
-    "anyscale": labbench.AnyscaleZeroShotAgent,
+    # "openai": labbench.OpenAIZeroShotAgent,
+    "anthropic": labbench.anthropic.AnthropicZeroShotAgent,
+    # "vertex": labbench.VertexZeroShotAgent,
+    # "anyscale": labbench.AnyscaleZeroShotAgent,
 }
 
 
