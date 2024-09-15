@@ -15,7 +15,7 @@ async def main():
     parser.add_argument("--provider", type=str, default="anthropic")
     parser.add_argument("--model", type=str, default="claude-3-5-sonnet-20240620")
 
-    parser.add_argument("--n_threads", type=int, default=12)
+    parser.add_argument("--n_threads", type=int, default=2)
     parser.add_argument("--output", type=str, default=None)
     parser.add_argument("--debug", action="store_true")
     parser.add_argument("--skip_completed", action="store_true")

@@ -16,8 +16,8 @@ class AnthropicZeroShotAgent(BaseZeroShotAgent):
         self.client = anthropic.AsyncAnthropic()
 
     @tenacity.retry(
-        stop=tenacity.stop_after_attempt(5),
-        wait=tenacity.wait_exponential_jitter(initial=4),
+        stop=tenacity.stop_after_attempt(10),
+        wait=tenacity.wait_exponential_jitter(initial=5),
     )
     async def get_completion(self, text_prompt: str, figs: list[Image] | None) -> str:
         if figs:
