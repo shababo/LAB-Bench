@@ -264,6 +264,12 @@ ENV/
 env.bak/
 venv.bak/
 
+<<<<<<< HEAD
+=======
+# uv files
+uv.lock
+
+>>>>>>> anthropic_eval
 # Spyder project settings
 .spyderproject
 .spyproject
